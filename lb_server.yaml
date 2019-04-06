@@ -32,7 +32,13 @@ resources:
       user_data: {get_param: user_data}
       user_data_format: RAW
       networks: [{network: {get_param: network} }]
-      
+      user_data: |
+        #!/bin/bash -v
+        yes Y | sudo apt-get update
+        wget "https://raw.githubusercontent.com/houssemmh/INF8480-TP3/master/server.py"
+        yes Y | sudo apt install python
+        python server.py
+
 
   member:
     type: OS::Neutron::LBaaS::PoolMember
