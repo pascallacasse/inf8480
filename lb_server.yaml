@@ -25,6 +25,9 @@ parameters:
   user_data:
     type: string
     description: Server user_data
+  user_data_format:
+    type: string
+    description: lol
 
 resources:
   server:
@@ -35,7 +38,7 @@ resources:
       key_name: {get_param: key_name}
       metadata: {get_param: metadata}
       user_data: {get_param: user_data}
-      user_data_format: RAW
+      user_data_format: {get_param: user_data_format}
       networks: [{network: {get_param: network} }]
             
 
