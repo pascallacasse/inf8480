@@ -20,6 +20,8 @@ parameters:
     type: string
     description: subnet on which server will be located
     default:  4ba321db-9247-454b-9274-faad8ec76461
+  metadata:
+    type: json
 
 resources:
   server:
@@ -28,6 +30,7 @@ resources:
       flavor: {get_param: flavor}
       image: {get_param: image}
       key_name: {get_param: key_name}
+      metadata: {get_param: metadata}
       user_data: {get_param: user_data}
       user_data_format: RAW
       networks: [{network: {get_param: network} }]
