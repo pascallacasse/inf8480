@@ -22,6 +22,9 @@ parameters:
     default:  4ba321db-9247-454b-9274-faad8ec76461
   metadata:
     type: json
+  user_data:
+    type: string
+    description: Server user_data
 
 resources:
   server:
